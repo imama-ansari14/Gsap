@@ -82,8 +82,8 @@ export default function OurStory() {
           <span
             className="absolute bottom-6 left-1/2 -translate-x-1/2 section-label"
             style={{
-              fontSize: "8px",
-              color: "rgba(200,151,58,0.3)",
+              fontSize: "9px",
+              color: "var(--gold-light)",
               whiteSpace: "nowrap",
             }}
           >
@@ -157,7 +157,7 @@ export default function OurStory() {
               fontSize: 14,
               fontWeight: 300,
               letterSpacing: "0.04em",
-              color: "rgba(242,234,216,0.45)",
+              color: "var(--cream-muted)",
               maxWidth: 420,
             }}
           >
@@ -197,7 +197,7 @@ export default function OurStory() {
             ))}
           </div>
 
-          <a href="#" className="btn-gold">
+          <a href="#" className="btn-gold" style={{ marginTop: 5 }}>
             Meet the Chef
             <span style={{ fontSize: 14 }}>→</span>
           </a>

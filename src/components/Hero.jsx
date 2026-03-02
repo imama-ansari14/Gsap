@@ -154,26 +154,10 @@ export default function Hero() {
             </p>
           </div>
 
-          <div ref={ctaRef} className="mt-10 flex items-center gap-6 opacity-0">
+          <div ref={ctaRef} className="mt-20 opacity-0">
             <a href="#" className="btn-gold">
               Reserve Your Evening
               <span style={{ fontSize: 16, lineHeight: 1 }}>→</span>
-            </a>
-            <a
-              href="#story"
-              className="font-sans text-cream"
-              style={{
-                fontSize: 10,
-                letterSpacing: "0.2em",
-                textTransform: "uppercase",
-                opacity: 0.4,
-                textDecoration: "none",
-                transition: "opacity 0.3s",
-              }}
-              onMouseEnter={(e) => (e.target.style.opacity = 0.9)}
-              onMouseLeave={(e) => (e.target.style.opacity = 0.4)}
-            >
-              Our Story
             </a>
           </div>
         </div>
@@ -182,40 +166,7 @@ export default function Hero() {
         <div className="hidden md:block" />
       </div>
 
-      {/* Scroll indicator */}
-      <div
-        ref={scrollRef}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-0"
-      >
-        <div
-          className="section-label"
-          style={{
-            fontSize: "8px",
-            letterSpacing: "0.4em",
-            color: "rgba(200,151,58,0.5)",
-          }}
-        >
-          Scroll
-        </div>
-        <div
-          style={{
-            width: 1,
-            height: 48,
-            position: "relative",
-            overflow: "hidden",
-          }}
-        >
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              background:
-                "linear-gradient(to bottom, var(--gold), transparent)",
-              animation: "scrollLine 1.8s ease-in-out infinite",
-            }}
-          />
-        </div>
-      </div>
+      
 
       <style>{`
         @keyframes scrollLine {

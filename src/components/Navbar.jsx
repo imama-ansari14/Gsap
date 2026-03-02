@@ -30,7 +30,7 @@ export default function Navbar() {
             <a
               href="#"
               className="section-label hover:text-gold transition-colors duration-300"
-              style={{ color: "rgba(242,234,216,0.45)" }}
+              style={{ color: "white" }}
             >
               {link}
             </a>
@@ -41,8 +41,8 @@ export default function Navbar() {
       {/* Center wordmark */}
       <div className="flex flex-col items-center">
         <span
-          className="section-label mb-1"
-          style={{ fontSize: "8px", letterSpacing: "0.5em" }}
+          className="section-label my-1"
+          style={{ fontSize: "9px", letterSpacing: "0.5em" }}
         >
           Est. 1923
         </span>
@@ -52,7 +52,7 @@ export default function Navbar() {
         <div className="gold-divider w-full mt-1" style={{ "--max": "40px" }}>
           <span
             className="section-label"
-            style={{ fontSize: "7px", letterSpacing: "0.3em" }}
+            style={{ fontSize: "9px", letterSpacing: "0.3em" }}
           >
             ✦ Paris ✦
           </span>
@@ -66,7 +66,7 @@ export default function Navbar() {
             <a
               href="#"
               className="section-label hover:text-gold transition-colors duration-300"
-              style={{ color: "rgba(242,234,216,0.45)" }}
+              style={{ color: "white" }}
             >
               {link}
             </a>
