@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+:root {
+  --gold: #c8973a;
+  --gold-light: #e8b96a;
+  --gold-pale: #f5e4c0;
+  --charcoal: #0e0c0a;
+  --charcoal-mid: #171410;
+  --charcoal-soft: #221e18;
+  --charcoal-muted: #2e2820;
+  --cream: #f2ead8;
+  --cream-muted: rgba(242, 234, 216, 0.6);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: auto; /* GSAP handles scroll */
+}
+
+body {
+  background-color: var(--charcoal);
+  color: var(--cream);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── TYPOGRAPHY UTILITIES ───────────────────────────────────────────── */
+.font-display {
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+.font-serif-alt {
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+.font-sans-luxury {
+  font-family: "Jost", sans-serif;
+}
+
+/* ─── GRAIN OVERLAY ──────────────────────────────────────────────────── */
+.grain-overlay::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0.032;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 180px;
+}
+
+/* ─── CUSTOM SCROLLBAR ───────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: var(--charcoal);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 2px;
+}
+
+/* ─── GOLD DIVIDER ───────────────────────────────────────────────────── */
+.gold-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.gold-divider::before,
+.gold-divider::after {
+  content: "";
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+  flex: 1;
+  max-width: 64px;
+}
+.gold-divider::after {
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+/* ─── DISH CIRCLE DECORATORS ─────────────────────────────────────────── */
+.dish-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(200, 151, 58, 0.18);
+  pointer-events: none;
+}
+
+/* ─── BUTTON ─────────────────────────────────────────────────────────── */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 40px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: "Jost", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: transparent;
+  text-decoration: none;
+  transition: background 0.4s ease, color 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+.btn-gold::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+  z-index: -1;
+}
+.btn-gold:hover {
+  color: var(--charcoal);
+}
+.btn-gold:hover::after {
+  transform: scaleX(1);
+}
+
+/* ─── MENU CARD ──────────────────────────────────────────────────────── */
+.menu-card {
+  border: 1px solid rgba(200, 151, 58, 0.12);
+  background: linear-gradient(
+    135deg,
+    rgba(46, 40, 32, 0.6) 0%,
+    rgba(23, 20, 16, 0.8) 100%
+  );
+  backdrop-filter: blur(8px);
+  transition: border-color 0.4s ease, transform 0.4s ease;
+}
+.menu-card:hover {
+  border-color: rgba(200, 151, 58, 0.35);
+  transform: translateY(-4px);
+}
+
+/* ─── LABEL ──────────────────────────────────────────────────────────── */
+.section-label {
+  font-family: "Jost", sans-serif;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ─── VIGNETTE ON SECTIONS ───────────────────────────────────────────── */
+.vignette {
+  background: radial-gradient(
+    ellipse 70% 70% at 50% 50%,
+    transparent 40%,
+    rgba(14, 12, 10, 0.85) 100%
+  );
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
